@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PocketBass – Four-bar pocket bass desk</title>
+<style>
+body { font-family: system-ui, sans-serif; background:#111; color:#eee; margin:20px; }
+button, input, select { margin:4px; padding:8px; }
+#status { font-weight:bold; }
+.chairs { display:flex; gap:10px; }
+.chair { border:1px solid #444; padding:8px; }
+</style>
+</head>
+<body>
+<h1>PocketBass</h1>
+<p>Four-bar live pocket bass desk. Your chords get a real electric bass groove so the loop finally has pocket and finishes.</p>
+<div id="status">Tap to start audio</div>
+<label>BPM <input type="number" id="bpm" min="60" max="180" value="92"></label>
+<label>Key <select id="key"><option>C</option><option>C#</option><option>D</option><option>Eb</option><option>E</option><option>F</option><option>F#</option><option>G</option><option>Ab</option><option>A</option><option>Bb</option><option>B</option></select></label>
+<label>Chords <input id="chords" value="Am F C G" placeholder="Am F C G"></label>
+<label>Style <select id="style"><option value="root">Root</option><option value="octave">Octave</option><option value="sync">Syncopated</option><option value="walk">Walk-lite</option></select></label>
+<br>
+<button id="play">Play</button> <button id="stop">Stop</button>
+<button id="exportWav">Export WAV</button> <button id="exportMid">Export MIDI</button>
+<div id="progress"></div>
+<div id="playhead">Step: 0</div>
+<div class="chairs">
+<div class="chair">Bass <button class="mute" data-chair="bass">Mute</button></div>
+<div class="chair">Kick <button class="mute" data-chair="kick">Mute</button></div>
+<div class="chair">Snare <button class="mute" data-chair="snare">Mute</button></div>
+<div class="chair">Hat <button class="mute" data-chair="hat">Mute</button></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
